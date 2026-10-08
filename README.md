@@ -1,4 +1,3 @@
-```md
 # DecisionForge
 
 DecisionForge is a framework for experimenting with, comparing, and combining decision-making models and decision engines.
@@ -444,4 +443,3 @@ infrastructure/
 ## Status
 
 Experimental / under active development.
-```
