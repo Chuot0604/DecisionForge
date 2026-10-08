@@ -1,0 +1,22 @@
+          Private Git Repository
+                  │
+          ┌───────┴───────┐
+          ▼               ▼
+      Home-PC            VPS
+     git pull           git pull
+          │               │
+          ▼               ▼
+ StartLux Large      StartLux Small
+ Laya Large          ggf. Laya Small
+ CUDA / 5070 Ti      CPU / 16 GB
+
+
+ZUHAUSE
+PC:   AI Compute       ON
+VPS:  Vector DB        ON
+      AI Fallback      OFF
+
+UNTERWEGS
+PC:   OFF
+VPS:  Vector DB        ON
+      AI Fallback      ON

@@ -1,0 +1,6 @@
+[submodule "services/StartLux-Decision"]
+	path = services/StartLux-Decision
+	url = https://github.com/StartLuxLabs/StartLux-Decision.git
+[submodule "services/laya"]
+	path = services/laya
+	url = https://github.com/he-jev/laya.git

@@ -1,0 +1,13 @@
+VPS
+
+Docker
+├── postgres
+│   └── pgvector          ← immer an
+│
+├── retrieval-api         ← immer an
+│
+├── startlux-small        ← bei Bedarf
+│
+├── laya-small            ← bei Bedarf
+│
+└── caddy                 ← immer an

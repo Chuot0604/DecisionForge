@@ -1,0 +1,48 @@
+Current goal:
+"Create a new contract"
+
+Current UI:
+
+[0] button     "New"
+[1] link       "Contracts"
+[2] button     "Delete"
+[3] textbox    "Search"
+[4] link       "Settings"
+---
+P(0) = 0.17
+P(1) = 0.76  ← Contracts
+P(2) = 0.01
+P(3) = 0.03
+P(4) = 0.03
+---
+[0] button "New contract"
+[1] textbox "Search"
+[2] link "Archived contracts"
+
+---
+CLICK(element_17)
+CLICK(element_22)
+FILL(element_31, value)
+SELECT(element_42, value)
+PRESS(ENTER)
+SCROLL(DOWN)
+
+GOAL_REACHED
+GOAL_FAILED
+NEED_REPLAN 
+---
+max 10 actions
+      ↓
+Goal nicht erreicht
+      ↓
+Confidence < threshold?
+      ↓
+NEED_REPLAN
+      ↓
+Planner bekommt:
+- ursprüngliches Ziel
+- bisherige Actions
+- aktuellen DOM State
+- Fehlermeldungen
+      ↓
+neuer Subplan

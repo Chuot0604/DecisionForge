@@ -1,0 +1,65 @@
+                   Test API
+                      │
+             POST /test-runs
+                      │
+                      ▼
+              Environment Init
+            ┌─────────┴─────────┐
+            │ Branch / MR       │
+            │ Testdaten         │
+            │ Environment       │
+            │ Auth / Benutzer   │
+            └─────────┬─────────┘
+                      ▼
+                PLANNER (LLM)
+          ┌───────────────────────┐
+          │ MR / Diff             │
+          │ Ticket                │
+          │ Kommentare            │
+          │ vorhandene Tests      │
+          │ RAG / Vector DB       │
+          └───────────┬───────────┘
+                      │
+                      ▼
+              Structured Test Plan
+              ┌─────────────────┐
+              │ Preconditions   │
+              │ Goal            │
+              │ Steps/Intents   │
+              │ Assertions      │
+              │ Cleanup         │
+              └────────┬────────┘
+                       ▼
+               EXECUTION LOOP
+        ┌────────────────────────────┐
+        │                            │
+        │      Playwright            │
+        │          │                 │
+        │          ▼                 │
+        │   UI State / Elements      │
+        │          │                 │
+        │          ▼                 │
+        │    Decision Model          │
+        │          │                 │
+        │    P(action | goal,state)  │
+        │          │                 │
+        │          ▼                 │
+        │       Action               │
+        │          │                 │
+        │          └─────────────┐   │
+        │                        │   │
+        └────────────────────────┘   │
+                  ▲                  │
+                  └──────────────────┘
+
+                       ↓
+                Goal / Assertion
+                   erreicht?
+                 YES       NO
+                  │         │
+                PASS    retry/replan
+
+
+Goal → Observe → Decide → Act → Observe → Decide → Act → … → Goal reached
+
+Planner erhält bei neuen Tests ähnliche vergangene Testfälle als Kontext

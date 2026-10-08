@@ -1,0 +1,47 @@
+ZUHAUSE / PC
+RTX 5070 Ti
+┌──────────────────────────────┐
+│ großes LLM                   │
+│ großes StartLux-Modell       │
+│ Embedding-Modell             │
+│ JEV / Agent / Orchestrierung │
+└──────────────┬───────────────┘
+               │ HTTPS / VPN
+               ▼
+NETCUP VPS
+┌──────────────────────────────┐
+│ API / Auth                   │
+│ PostgreSQL + pgvector        │
+│ Dokumente / Metadaten        │
+│ optional kleines StartLux    │
+│ 0.8B / 2B CPU                │
+└──────────────────────────────┘
+
+PC: User → LLM → Embedding → Anfrage an VPS → relevante Vektoren zurück → LLM
+
+PC
+Dokument
+  ↓
+Embedding Model
+  ↓
+[0.13, -0.82, 0.41, ...]
+  ↓
+HTTPS
+  ↓
+VPS → PostgreSQL/pgvector
+
+---
+
+"Welche Rechnung betrifft Projekt X?"
+            ↓
+       PC Embedding
+            ↓
+     Query-Vektor
+            ↓
+        VPS Vector DB
+            ↓
+      Top 10 Chunks
+            ↓
+            PC
+            ↓
+           LLM

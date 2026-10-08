@@ -1,0 +1,18 @@
+{
+  "test": "Create and edit contract",
+  "preconditions": [
+    "User is authenticated",
+    "User has contract creation permission"
+  ],
+  "goals": [
+    {
+      "goal": "Create contract",
+      "expected": "Contract exists"
+    },
+    {
+      "goal": "Change contract name",
+      "expected": "Updated name is persisted"
+    }
+  ]
+}
+
